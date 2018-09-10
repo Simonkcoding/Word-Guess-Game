@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    color:white;
+}
+
+body{
+    background-color: black;
+    position: relative;
+}
+
+.bannerPic{
+    display: block;
+margin:auto;
+}
+
+.textSection{
+    padding:20px;
+    position: absolute;
+    right:80px;
+    border: solid white;
+    width:40%;
+    height:400px;
+    text-align: center;
+}
+
+#winCount-Text{
+    border:solid 2px white;
+    width: 10%;
+    margin:10px auto 10px auto;
+}
+
+#guessLeftCount-Text{
+    border:solid 2px white;
+    width: 10%;
+    margin:10px auto 10px auto;
+}
+
+.mediaSection{
+    padding:20px;
+    position: absolute;
+    left:80px;
+    border: solid white;
+    width:40%;
+    height:400px;
+}
+#planet{
+   display:block;
+   margin:auto;
+}
+/* .picCutter{
+    background-image: url(../images/planets.jpg);
+    overflow: hidden;
+    margin:auto;
+    width:200px;
+    height:200px;
+} */
