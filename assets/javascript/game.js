@@ -74,28 +74,32 @@ console.log(alphabetArray);
 // Game Start
 document.onkeyup = function (event) {
     
-
-    //Turn key to upper case
-    var eventKeyUpper = event.key.toUpperCase();
+    var eventKeyUpper = event.key.toUpperCase(); //Turn key to upper case
     var charCodeCheck = eventKeyUpper.charCode;
-    // console.log(event.which);
 
+    //check if the input is a alphabet
 if  (event.which  >= 65 && event.which  <= 90) {
-    wordUsed.push(eventKeyUpper);
-    // console.log(wordUsed);
+    wordUsed.push(eventKeyUpper); 
+
+    // relate js to html
+    var getMaskedArray = document.getElementById('answerArray-Text');
+    var getGuessLeft = document.getElementById('guessLeftCount-Text');
+    var getwinCount = document.getElementById('winCount-Text');
+    var getwordUsed = document.getElementById('guessSoFar-Text');
+    // mistake check counter
     var elementWrongCounter = 0;
-    
-  
-            
-            
+
+
             for (var i = 0; i < wordArray.length; i++) {
                 if (eventKeyUpper == wordArray[i]) {
                     maskedArray[i] = eventKeyUpper;
                     console.log(maskedArray);
                     console.log(wordArray);
                     if (maskedArray.toString() == wordArray.toString()) {
+
                         alert('Good job, the answer is ' + quizChoice);
                         winCount++;
+
                         if (quizChoice == "MERCURY") {
                             document.getElementById("planet").src = "assets/images/mercury.jpg";
                             bgSound = sound("assets/media/mercury.mp3");
@@ -128,6 +132,7 @@ if  (event.which  >= 65 && event.which  <= 90) {
                             document.getElementById("planet").src = "assets/images/neptune.jpg";
                             bgSound = sound("assets/media/neptune.mp3");
                         }
+                       
                         // console.log(winCount);
                         gameStart();
                     }
@@ -144,11 +149,6 @@ if  (event.which  >= 65 && event.which  <= 90) {
                 }
 
             }
-
-            var getMaskedArray = document.getElementById('answerArray-Text');
-            var getGuessLeft = document.getElementById('guessLeftCount-Text');
-            var getwinCount = document.getElementById('winCount-Text');
-            var getwordUsed = document.getElementById('guessSoFar-Text');
 
             getMaskedArray.textContent = maskedArray;
             getGuessLeft.textContent = guessCount;
